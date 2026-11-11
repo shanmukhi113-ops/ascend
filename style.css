@@ -1,0 +1,135 @@
+/* Ascend: matte dark, violet / pink / teal. No gradients, no glow, no glass. */
+:root{
+  --bg:#15101c; --bg2:#1c1527; --card:#221a2e; --line:#372b49;
+  --ink:#efe8f6; --mute:#a597b8;
+  --a:#a78bdb;  /* lilac  */
+  --b:#d77aa7;  /* pink   */
+  --c:#6cc0b0;  /* teal   */
+  --on:#150e22; /* text on filled accents */
+  --serif:"Bodoni Moda","Didot",Georgia,serif;
+  --sans:"Figtree",system-ui,sans-serif;
+  color-scheme:dark;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--sans)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;letter-spacing:-.01em}
+h2{font-size:30px;margin-bottom:4px}
+.sub{color:var(--mute);margin:0 0 18px;font-size:15px}
+section{margin-top:64px}
+input,textarea,button{font:inherit;color:inherit}
+input,textarea{background:transparent;border:0;border-bottom:1px solid var(--line);padding:8px 2px;width:100%;outline:0}
+input:focus,textarea:focus{border-color:var(--a)}
+textarea{resize:vertical;min-height:64px;border:1px solid var(--line);border-radius:10px;padding:10px}
+button{cursor:pointer;background:var(--a);color:var(--on);border:0;border-radius:999px;padding:9px 18px;font-weight:600}
+button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+button:focus-visible,input:focus-visible,textarea:focus-visible,.v:focus-visible{outline:2px solid var(--a);outline-offset:2px}
+
+/* ---------- login gate ---------- */
+#gate{display:flex;min-height:85vh;align-items:center;justify-content:center;text-align:center;padding:24px}
+.gc{max-width:440px}
+.gc h1{font-size:clamp(54px,12vw,96px);font-style:italic;line-height:1}
+.gc .tl{font-family:var(--serif);font-size:22px;color:var(--b);margin:10px 0 26px}
+.gc p{color:var(--mute)}
+.gc button{font-size:17px;padding:13px 34px}
+.gc button:disabled{opacity:.6}
+.gc .alt{display:block;margin:14px auto 0;background:none;color:var(--mute);font-weight:500;text-decoration:underline;padding:4px}
+
+/* ---------- shell: fixed vision rail on the left, everything else on the right ---------- */
+.shell{display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;max-width:1280px;margin:0 auto;padding:0 20px}
+.shell[hidden]{display:none}
+.rail{position:sticky;top:0;height:100vh;height:100dvh;padding:20px 0;display:flex;flex-direction:column;gap:12px}
+.rail h3{font-size:20px;font-style:italic;color:var(--b)}
+.vision{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(5,minmax(0,1fr));gap:8px}
+.v{position:relative;overflow:hidden;border-radius:12px;background:var(--bg2);border:1px dashed var(--line);display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;color:var(--mute);cursor:pointer;min-height:0}
+.v.has{border:0}
+.v img{width:100%;height:100%;object-fit:cover;display:block}
+.v .x{position:absolute;top:4px;right:4px;padding:0 8px;font-size:15px;line-height:22px;background:var(--bg);color:var(--ink)}
+.main{padding:28px 0 80px;min-width:0}
+
+/* ---------- hero ---------- */
+.hero{padding:20px 0 10px;display:grid;grid-template-columns:1.5fr 1fr;gap:36px;align-items:end}
+.date{color:var(--mute);font-size:14px}
+.hello{font-size:clamp(38px,6vw,76px);line-height:1;margin:10px 0 18px;font-style:italic}
+.hello input{font:inherit;font-style:italic;border:0;border-bottom:2px dashed var(--line);width:5.5em;padding:0}
+.aff{font-family:var(--serif);font-size:clamp(20px,2.4vw,27px);line-height:1.3;color:var(--b);max-width:34ch;cursor:pointer}
+.hint{color:var(--mute);font-size:13px;margin-top:8px}
+.ring{display:flex;gap:18px;align-items:center;justify-content:flex-end}
+.ring svg{width:140px;height:140px;flex:none}
+.ring b{font-family:var(--serif);font-size:44px;font-weight:500;display:block;line-height:1}
+
+/* ---------- waiting goals ---------- */
+.goals{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.g{background:var(--card);border:1px solid var(--line);border-radius:22px 22px 4px 22px;padding:18px;display:flex;flex-direction:column;gap:10px;min-height:200px}
+.g:nth-child(even){border-radius:22px 4px 22px 22px}
+.g .tag{font-size:12px;color:var(--a);font-style:italic;font-family:var(--serif)}
+.g input.t{font-family:var(--serif);font-size:19px;border:0;padding:0}
+.g input.w{font-size:13px;color:var(--mute)}
+.g.done{border-color:var(--c)}
+.g.done .tag{color:var(--c)}
+.g.done .t{text-decoration:line-through;text-decoration-color:var(--c)}
+.g button{margin-top:auto;align-self:flex-start;font-size:13px;padding:6px 14px}
+
+/* ---------- today ---------- */
+.two{display:grid;grid-template-columns:1.2fr 1fr;gap:24px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px}
+.bar{height:14px;border-radius:99px;background:var(--bg2);overflow:hidden;border:1px solid var(--line);margin:10px 0 16px}
+.bar i{display:block;height:100%;width:0;background:var(--a);transition:width .4s}
+.task{display:flex;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line)}
+.task span{flex:1}
+.task.d span{opacity:.5;text-decoration:line-through}
+.ck{appearance:none;-webkit-appearance:none;width:24px;height:24px;border-radius:50%;border:2px solid var(--b);display:grid;place-items:center;cursor:pointer;padding:0;flex:none;background:transparent}
+.ck:checked{background:var(--c);border-color:var(--c)}
+.ck:checked::after{content:"✓";color:var(--on);font-weight:700;font-size:14px}
+.add{display:flex;gap:10px;margin-top:14px;align-items:end}
+.rm{background:none;color:var(--mute);padding:0 6px;font-size:18px}
+
+/* ---------- habits ---------- */
+.ht{width:100%;border-collapse:collapse;font-size:14px}
+.ht th{font-weight:500;color:var(--mute);padding:6px 2px;text-align:center}
+.ht th:first-child,.ht td:first-child{text-align:left}
+.ht td{padding:8px 2px;text-align:center;border-top:1px solid var(--line)}
+.ht td:first-child{padding-right:10px}
+.ht .ck{width:20px;height:20px}
+.cnt{color:var(--c);font-size:13px;white-space:nowrap}
+
+/* ---------- breaker ---------- */
+.breaker{margin-top:28px;padding:22px;border-radius:22px;background:var(--bg2);border:1px solid var(--line);display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.breaker h3{font-size:24px}
+#brt{font-family:var(--serif);font-size:28px;color:var(--c);min-width:8ch}
+
+/* ---------- questions + monthly goals ---------- */
+.q{margin-bottom:18px}
+.q h3{font-size:20px;margin-bottom:8px;font-style:italic}
+.mg{padding:16px 0;border-top:1px solid var(--line)}
+.mg:first-child{border-top:0;padding-top:0}
+.mg .goal{font-family:var(--serif);font-size:20px}
+.mg .log{color:var(--mute);font-size:14px;margin:6px 0 0;padding-left:16px}
+.mg .add{margin-top:6px}
+
+/* ---------- stats ---------- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.s{padding:18px;border-radius:18px;border:1px solid var(--line);background:var(--card)}
+.s b{font-family:var(--serif);font-size:38px;font-weight:500;color:var(--a);display:block;line-height:1.1}
+.s small{color:var(--mute)}
+.months{display:grid;gap:10px;margin-top:16px}
+.m{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 16px;border:1px solid var(--line);border-radius:14px;font-size:14px}
+
+footer{margin-top:70px;text-align:center}
+#who{color:var(--mute);font-size:14px;margin-bottom:14px}
+
+/* ---------- small screens: the vision rail becomes a fixed strip at the top ---------- */
+@media(max-width:900px){
+  .shell{grid-template-columns:1fr;gap:0}
+  .rail{height:auto;padding:10px 0;background:var(--bg);z-index:5;border-bottom:1px solid var(--line);top:env(safe-area-inset-top,0px)}
+  .rail h3{display:none}
+  .vision{display:flex;overflow-x:auto;gap:8px}
+  .v{flex:0 0 60px;height:60px}
+  .hero,.two{grid-template-columns:1fr}
+  .ring{justify-content:flex-start}
+  .ht{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
