@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Ascend: who I’m becoming</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN GATE -->
+<div id="gate">
+  <div class="gc">
+    <h1>Ascend</h1>
+    <p class="tl">Who you’re becoming is already waiting.</p>
+    <button id="gb">Continue with Google</button>
+    <button id="gp" class="alt" hidden>Preview without signing in</button>
+    <p id="gm"></p>
+  </div>
+</div>
+
+<!-- APP -->
+<div class="shell" id="app" hidden>
+
+  <!-- LEFT: vision board, stays fixed while the page scrolls -->
+  <aside class="rail">
+    <h3>My vision</h3>
+    <div class="vision" id="vision"></div>
+  </aside>
+
+  <!-- RIGHT: everything else -->
+  <main class="main">
+    <header class="hero">
+      <div>
+        <div class="date" id="date"></div>
+        <h1 class="hello"><span id="greet"></span>, <input id="name" placeholder="your name" aria-label="Your name"></h1>
+        <div class="aff" id="aff" role="button" tabindex="0"></div>
+        <div class="hint">Tap the line for a new one. Read it once, then go build.</div>
+      </div>
+      <div class="ring">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="60" cy="60" r="52" fill="none" stroke="var(--line)" stroke-width="9"/>
+          <circle id="rc" cx="60" cy="60" r="52" fill="none" stroke="var(--a)" stroke-width="9" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7" transform="rotate(-90 60 60)" style="transition:stroke-dashoffset .5s"/>
+        </svg>
+        <div><b id="rp">0%</b><span class="sub">of today is done</span></div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Waiting for you</h2>
+      <p class="sub">Five things in the next two years that already have your name on them. Mark one claimed when it arrives.</p>
+      <div class="goals" id="goals"></div>
+    </section>
+
+    <section>
+      <h2>Today</h2>
+      <p class="sub">Three non-negotiables beat ten wishes. Check them off and watch the bar fill.</p>
+      <div class="two">
+        <div class="panel">
+          <div style="display:flex;justify-content:space-between"><b id="tl">0 of 0 done</b><b id="tp">0%</b></div>
+          <div class="bar"><i id="tb"></i></div>
+          <div id="tasks"></div>
+          <div class="add"><input id="nt" placeholder="Add a task for today"><button id="ant">Add task</button></div>
+        </div>
+        <div class="panel">
+          <h3 style="font-size:22px;margin-bottom:10px">Habits this week</h3>
+          <table class="ht" id="habits"></table>
+          <div class="add"><input id="nh" placeholder="New habit"><button id="anh" class="ghost">Add habit</button></div>
+        </div>
+      </div>
+      <div class="breaker">
+        <div><h3>Feeling the urge to check or spiral?</h3><div class="sub" style="margin:4px 0 0">Nothing has changed in the last hour. Take one minute, then do the next task.</div></div>
+        <div style="display:flex;gap:14px;align-items:center"><span id="brt"></span><button id="brb">Breathe for 60 seconds</button></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Three questions for today</h2>
+      <p class="sub">Answer like the person you’re becoming already exists. These change every day.</p>
+      <div class="panel" id="qs"></div>
+    </section>
+
+    <section>
+      <h2 id="mt">This month’s five</h2>
+      <p class="sub">Set five goals for the month. When you do something that moves one forward, log it.</p>
+      <div class="panel" id="mg"></div>
+    </section>
+
+    <section>
+      <h2>Your numbers</h2>
+      <p class="sub">Proof beats feelings. This is what you have actually done.</p>
+      <div class="stats" id="stats"></div>
+      <div class="panel" style="margin-top:14px">
+        <h3 style="font-size:22px;margin-bottom:8px">This month’s wins</h3>
+        <textarea id="wins" placeholder="What are you proud of this month? Write it down."></textarea>
+      </div>
+      <div class="months" id="months"></div>
+    </section>
+
+    <footer>
+      <div id="who"></div>
+      <button class="ghost" id="lo">Log out</button>
+    </footer>
+  </main>
+</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
